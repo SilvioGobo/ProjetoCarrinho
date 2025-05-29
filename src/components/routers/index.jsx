@@ -3,21 +3,14 @@ import { Route, Routes } from 'react-router';
 import PaginaProdutos from '../../pages/Produtos/PaginaProdutos';
 import Login from '../../pages/Login/telaLogin';
 import Cadastro from '../../pages/Cadastro/telaCadastro';
-import PrivateRoute from './PrivateRoute';
 
 export default function Routers() {
   return (
    <Routes>
-      <Route
-        path="/"
-        element={
-          <PrivateRoute>
-            <PaginaProdutos />
-          </PrivateRoute>
-        }
-      />
+      <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/cadastro" element={<Cadastro />} />
+      <Route path="/pagprodutos" element={<PaginaProdutos />} />
     </Routes>
   );
 }
