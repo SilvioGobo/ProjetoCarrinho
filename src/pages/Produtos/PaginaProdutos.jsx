@@ -35,13 +35,20 @@ export default function PaginaProdutos() {
         <button onClick={() => setMostrarCarrinho(!mostrarCarrinho)}> <FontAwesomeIcon icon={faShoppingCart} />  </button>
       </div>
       
+      <div className="botoes-crud">
+        <button onClick={() => navigate('/criar-produto')}>Adicionar Produto</button>
+      </div>
+      
       <div className="grid-produtos">
         {produtos.map((produto, index) => (
           <div key={index} className="card-produto">
             <img src={produto.imagem} alt={produto.nome} className="imagem-produto" />
             <h2 className="nome-produto">{produto.nome}</h2>
             <p className="preco-produto">R$ {produto.valor.toFixed(2)}</p>
-            <button className="botao-comprar" onClick={()=> adicionarAoCarrinho(produto)}>Adicionar ao carrinho</button>
+            <button className="botao-comprar" onClick={() => adicionarAoCarrinho(produto)}>Adicionar ao carrinho</button>
+            <button className="botao-comprar" onClick={() => navigate(`/visualizar-produto/${index}`)}>Ver</button>
+            <button className="botao-comprar" onClick={() => navigate(`/atualizar-produto/${index}`)}>Editar</button>
+            <button className="botao-comprar" onClick={() => navigate(`/remover-produto/${index}`)}>Remover</button>
           </div>
         ))}
       </div>
