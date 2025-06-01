@@ -17,10 +17,10 @@ export default function Routers() {
       <Route path="/pagprodutos" element={<PaginaProdutos />} />
 
       
-      <Route path="/criar-produto" element={<CriarProduto />} />
-      <Route path="/atualizar-produto" element={<AtualizarProduto />} />
-      <Route path="/visualizar-produto" element={<VisualizarProduto />} />
-      <Route path="/remover-produto" element={<RemoverProduto />} />
+      <Route path="/produtos/criar" element={<CriarProduto />} />
+      <Route path="/produtos/atualizar" element={<AtualizarProduto />} />
+      <Route path="/produtos/visualizar" element={<VisualizarProduto />} />
+      <Route path="/produtos/remover" element={<RemoverProduto />} />
     </Routes>
   );
 }

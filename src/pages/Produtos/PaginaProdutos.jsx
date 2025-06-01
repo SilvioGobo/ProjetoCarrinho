@@ -36,7 +36,7 @@ export default function PaginaProdutos() {
       </div>
       
       <div className="botoes-crud">
-        <button onClick={() => navigate('/criar-produto')}>Adicionar Produto</button>
+        <button onClick={() => navigate('/produtos/criar')}>Adicionar Produto</button>
       </div>
       
       <div className="grid-produtos">
@@ -46,9 +46,9 @@ export default function PaginaProdutos() {
             <h2 className="nome-produto">{produto.nome}</h2>
             <p className="preco-produto">R$ {produto.valor.toFixed(2)}</p>
             <button className="botao-comprar" onClick={() => adicionarAoCarrinho(produto)}>Adicionar ao carrinho</button>
-            <button className="botao-comprar" onClick={() => navigate(`/visualizar-produto/${index}`)}>Ver</button>
-            <button className="botao-comprar" onClick={() => navigate(`/atualizar-produto/${index}`)}>Editar</button>
-            <button className="botao-comprar" onClick={() => navigate(`/remover-produto/${index}`)}>Remover</button>
+            <button className="botao-comprar" onClick={() => navigate(`/produtos/visualizar/${index}`)}>Ver</button>
+            <button className="botao-comprar" onClick={() => navigate(`/produtos/atualizar/${index}`)}>Editar</button>
+            <button className="botao-comprar" onClick={() => navigate(`/produtos/remover/${index}`)}>Remover</button>
           </div>
         ))}
       </div>
