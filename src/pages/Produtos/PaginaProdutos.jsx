@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Carrinho from "../../components/Carrinho";
 import { useNavigate } from 'react-router-dom';
-
+//att 15
 export default function PaginaProdutos() {
   const navigate = useNavigate();
   const [mostrarCarrinho, setMostrarCarrinho] = useState(false);

@@ -3,7 +3,7 @@ import "./styles/crud.css";
 import { useNavigate } from 'react-router-dom';
 import { DeletarProduto } from '../../components/data/fetchProdutos';
 import { useParams } from 'react-router-dom';
-
+//att 15
 export default function RemoverProduto() {
     const navigate = useNavigate();
     const [id, setId] = useState('');
