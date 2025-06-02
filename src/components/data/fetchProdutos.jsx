@@ -32,9 +32,9 @@ export async function LerProdutos(setProdutos) {
 export async function DeletarProduto(id) {
   try {
     const response = await axios.delete(
-      `http://localhost:3000/produtos/deletar/`,
-      { id },
+      "http://localhost:3000/produtos/deletar",
       {
+        data: { id }, // aqui você envia o ID no corpo
         headers: { "Content-Type": "application/json" },
       }
     );

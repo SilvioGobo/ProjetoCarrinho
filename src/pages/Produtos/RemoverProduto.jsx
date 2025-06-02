@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import "./styles/crud.css";
 import { useNavigate } from 'react-router-dom';
+import { DeletarProduto } from '../../components/data/fetchProdutos';
+import { useParams } from 'react-router-dom';
 
 export default function RemoverProduto() {
     const navigate = useNavigate();
     const [id, setId] = useState('');
 
-    const handleRemover = () => {
-        console.log('Produto removido com ID:', id);
-        navigate('/');
+    const handleRemover = async () => {
+        await DeletarProduto(id);
+        navigate('/pagprodutos');
     };
 
     return (

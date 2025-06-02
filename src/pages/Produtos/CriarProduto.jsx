@@ -11,7 +11,7 @@ export default function CriarProdutoPage() {
 
   const handleCriar = async () => {
     await CriarProduto(nome, parseFloat(valor), imagem);
-    navigate('/produtos'); 
+    navigate('/pagprodutos'); 
   };
 
   return (

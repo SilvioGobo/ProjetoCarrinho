@@ -20,7 +20,7 @@ export default function Routers() {
       <Route path="/produtos/criar" element={<CriarProduto />} />
       <Route path="/produtos/atualizar" element={<AtualizarProduto />} />
       <Route path="/produtos/visualizar" element={<VisualizarProduto />} />
-      <Route path="/produtos/remover" element={<RemoverProduto />} />
+      <Route path="/produtos/remover/:id" element={<RemoverProduto />} />
     </Routes>
   );
 }
