@@ -50,8 +50,8 @@ export default function PaginaProdutos() {
             <h2 className="nome-produto">{produto.nome}</h2>
             <p className="preco-produto">R$ {parseFloat(produto.valor).toFixed(2)}</p>
             <button className="botao-comprar" onClick={() => adicionarAoCarrinho(produto)}>Adicionar ao carrinho</button>
-            <button className="botao-comprar" onClick={() => navigate(`/produtos/visualizar/${produto.id}`)}>Ver</button>
-            <button className="botao-comprar" onClick={() => navigate(`/produtos/atualizar/${produto.id}`)}>Editar</button>
+            <button className="botao-comprar" onClick={() => navigate(`/produtos/visualizar/`)}>Ver</button>
+            <button className="botao-comprar" onClick={() => navigate(`/produtos/atualizar`)}>Editar</button>
             <button className="botao-comprar" onClick={() => navigate(`/produtos/remover/${produto.id}`)}>Remover</button>
           </div>
         ))}

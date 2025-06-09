@@ -9,17 +9,33 @@ export default function AtualizarProduto() {
     const [valor, setValor] = useState('');
     const [imagem, setImagem] = useState('');
 
-    const handleAtualizar = () => {
-        const produtoAtualizado = {
-            id,
-            nome,
-            valor: parseFloat(valor),
-            imagem
-        };
-
-        console.log('Produto atualizado:', produtoAtualizado);
-        navigate('/');
+    const handleAtualizar = async () => {
+    const produtoAtualizado = {
+        id,
+        nome,
+        valor: parseFloat(valor),
+        imagem
     };
+
+    try {
+        const resposta = await fetch("http://localhost:3000/produtos/atualizar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(produtoAtualizado)
+        });
+
+        if (resposta.ok) {
+            console.log("Produto atualizado com sucesso!");
+            navigate('/pagprodutos');
+        } else {
+            console.error("Erro ao atualizar produto");
+        }
+    } catch (erro) {
+        console.error("Erro na requisição:", erro);
+    }
+};
 
     return (
         <div className="container">
@@ -36,7 +52,6 @@ export default function AtualizarProduto() {
                     <label>Novo nome</label>
                     <input
                         type="text"
-                        placeholder="Ex: Camiseta"
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
                     />
@@ -44,7 +59,6 @@ export default function AtualizarProduto() {
                     <label>Novo valor</label>
                     <input
                         type="number"
-                        placeholder="Ex: 59.90"
                         value={valor}
                         onChange={(e) => setValor(e.target.value)}
                     />
@@ -52,7 +66,6 @@ export default function AtualizarProduto() {
                     <label>Nova imagem (URL)</label>
                     <input
                         type="text"
-                        placeholder="https://imagem.com/produto.jpg"
                         value={imagem}
                         onChange={(e) => setImagem(e.target.value)}
                     />
